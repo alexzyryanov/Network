@@ -17,7 +17,7 @@ struct NetworkService {
     }
     
     private static func createURLRequest(_ type: NetworkRequestProtocol) throws -> URLRequest {
-        guard let url = URL(string: type.path) else {
+        guard let url = URL(string: type.urlString) else {
             throw NetworkServiceError.invalidURL
         }
         
