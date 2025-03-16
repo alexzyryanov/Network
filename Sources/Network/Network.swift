@@ -3,13 +3,8 @@
 
 import Foundation
 
-
-@available(macOS 12.0, *)
-struct Network {
-    static func fetchGoogle() async throws -> String {
-        let request = URLRequest(url: URL(string: "https://google.com")!)
-        let (data, _) = try await URLSession.shared.data(for: request)
-        let dataString = String(decoding: data, as: UTF8.self)
-        return dataString
+public struct Network {
+    static func request(_ type: NetworkRequestProtocol) async throws -> Data {
+        try await NetworkService.request(type)
     }
 }
