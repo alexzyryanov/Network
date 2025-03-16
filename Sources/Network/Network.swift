@@ -4,7 +4,7 @@
 import Foundation
 
 public struct Network {
-    static func request(_ type: NetworkRequestProtocol) async throws -> Data {
+    static public func request(_ type: NetworkRequestProtocol) async throws -> Data {
         try await NetworkService.request(type)
     }
 }
