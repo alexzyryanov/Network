@@ -1,4 +1,4 @@
-public enum NetworkRequestMethod: String {
+public enum NetworkRequestMethod: String, @unchecked Sendable {
     case post = "POST"
     case get = "GET"
     case patch = "PATCH"
